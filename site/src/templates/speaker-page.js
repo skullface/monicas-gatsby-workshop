@@ -13,6 +13,16 @@ export default function SpeakerPage({ data }) {
         <h2 className="text-4xl font-extrabold  tracking-tight font-inter p-4">
           with {speaker.name}
         </h2>
+
+        <p>
+          {speaker.bio ||
+            "More information about this author will be available soon"}
+        </p>
+
+        <p>
+          {speaker.abstract ||
+            "More information about this talk will be available soon"}
+        </p>
       </div>
     </Layout>
   );
@@ -23,6 +33,8 @@ export const query = graphql`
     speakersYaml(fields: { slug: { eq: $slug } }) {
       name
       title
+      bio
+      abstract
     }
   }
 `;
