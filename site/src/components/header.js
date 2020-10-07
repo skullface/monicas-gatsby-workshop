@@ -11,6 +11,7 @@ function Header({ siteTitle }) {
     { href: "/about", name: "About" },
     { href: "/tickets", name: "Tickets" },
     { href: "/#schedule", name: "Schedule" },
+    { href: "/speakers", name: "Speakers" },
   ];
 
   return (
