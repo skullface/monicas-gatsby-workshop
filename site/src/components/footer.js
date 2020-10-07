@@ -1,7 +1,19 @@
 import React from "react";
 import { Link } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 export default function footer() {
+  const data = useStaticQuery(graphql`
+    query CopyrightQuery {
+      site {
+        siteMetadata {
+          title
+          author
+        }
+      }
+    }
+  `);
+
   return (
     <div>
       <div className="bg-white ">
@@ -11,7 +23,8 @@ export default function footer() {
               to="/"
               className="no-underline text-gray-700 hover:text-gray-500"
             >
-              &copy; SketchXConf 2020
+              &copy; {data.site.siteMetadata.title} by{" "}
+              {data.site.siteMetadata.author}
             </Link>
           </p>
 
